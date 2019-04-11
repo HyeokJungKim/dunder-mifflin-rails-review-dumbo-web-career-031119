@@ -1,0 +1,15 @@
+<h1>Make a new Employee</h1>
+
+<%= form_for @employee do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.collection_select(:dog_id, @dogs, :id, :name) %>
+  <%# First argument: Attribute being assigned to the thing that the form is for %>
+  <%# Second: The array of options to choose from  %>
+  <%# Third: What's being stored as the value %>
+  <%# Fourth: What's being displayed %>
+  <%= f.submit %>
+<% end %>
